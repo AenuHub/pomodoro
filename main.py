@@ -1,7 +1,6 @@
 from tkinter import *
-import winsound  # Use winsound for playing sound on Windows
+import winsound
 
-# CONSTANTS
 PINK = "#e2979c"
 RED = "#e7305b"
 GREEN = "#9bdeac"
@@ -13,8 +12,6 @@ LONG_BREAK_MIN = 1
 REPS = 0
 timer = None
 
-# --- TIMER RESET --- #
-
 def reset_timer():
     window.after_cancel(timer)
     canvas.itemconfig(timer_text, text="00:00")
@@ -22,8 +19,6 @@ def reset_timer():
     checkmark.config(text="")
     global REPS
     REPS = 0
-
-# --- TIMER MECHANISM --- #
 
 def start_timer():
     global REPS
@@ -40,8 +35,6 @@ def start_timer():
     else:
         countdown(work_sec)
         label.config(text="Work", fg=GREEN)
-
-# --- COUNTDOWN MECHANISM --- #
 
 def countdown(count):
     minutes = int(count) // 60
@@ -63,10 +56,8 @@ def countdown(count):
 def play_sound():
     winsound.Beep(1000, 500)
 
-# --- UI SETUP --- #
-
 window = Tk()
-window.geometry("500x500")  # Set a static size for the window
+window.geometry("500x500") # set window size
 window.config(padx=110, pady=70, bg=YELLOW)
 window.title("Pomodoro Counter")
 window.resizable(False, False)
@@ -89,7 +80,7 @@ canvas.create_image(100, 112, image=tomato_img)
 timer_text = canvas.create_text(100, 130, text="00:00", fill="white", font=(FONT_NAME, 35, "bold"))
 canvas.grid(column=1, row=1)
 
-# Prevent window from expanding when widgets are updated
+# prevent window from expanding when widgets are updated
 window.grid_propagate(False)
 
 window.mainloop()
