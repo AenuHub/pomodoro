@@ -7,6 +7,8 @@ A simple **Pomodoro Timer** written in Python using the `tkinter` library for th
 - Use of **Tomato Pomodoro Image** to visualize focus intervals.
 - Easily customizable for **work-break cycles**.
 - Lightweight and beginner-friendly.
+- It is **open-source** and **free to use**.
+- Plays a **short sound** at the end of each interval.
 
 ### Preview 🖼️
 ![Pomodoro Preview](images/preview.png)
